@@ -1,13 +1,15 @@
 html
   include partials/header.pug
   body 
-    if patisseries
-    h1.green= message
-    h3= msg2
+    if isFinished 
+      span Le jeu est terminé dsl
+    if !isFinished
+      h1.green= message
+      h3= msg2
 
-    if patisseries[0]
-      span patisseries gagnées :
-      ul 
-        each val in patisseries
-          li= val.name
-      button
+      if patisseries[0]
+        span patisseries gagnées :
+        ul 
+          each val in patisseries
+            li= val.name
+        button

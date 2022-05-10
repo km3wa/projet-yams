@@ -3,7 +3,12 @@ import express from "express";
 import route from "./routes/routes";
 import dotenv from 'dotenv';
 import patisseries from './utils/patisseries';
-import { Patisserie } from './Models/Patisserie';
+import { Compteur, Patisserie } from './Models/Patisserie';
+import { dirname } from "path";
+import url, { fileURLToPath } from "url";
+import { resetGlobalCount, resetPatisserieCount } from './utils/db';
+
+//export const __dirname = dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
 const { APP_LOCALHOST : hostname, APP_PORT: port, APP_DSN: dsn } = process.env;
@@ -14,6 +19,11 @@ mongoose.connect(dsn, {
   "useUnifiedTopology": true,
 })
 
+//resetPatisserieCount();
+//resetGlobalCount();
+
+//Compteur.insertMany([{count: 50}], (_) => console.log("saved"))
+
 /*
 Patisserie.insertMany(patisseries, function (err) {
   if (err) throw err;
@@ -22,7 +32,7 @@ Patisserie.insertMany(patisseries, function (err) {
 });
 */
   
-app.use(express.static(__dirname + "/public"));
+app.use(express.static('/public'));
 app.set('view engine', 'pug');
 
 app.use('/', route);

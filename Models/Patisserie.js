@@ -8,7 +8,12 @@ const PatisserieSchema = new Schema({
   order: Number
 });
 
+const CompteurSchema = new Schema({
+  count: Number
+});
+
 const Patisserie = model("patisseries", PatisserieSchema);
+const Compteur = model("compteurs", CompteurSchema);
 
 /*const UserShema = new Schema({
   firstName: {
@@ -29,4 +34,4 @@ const Patisserie = model("patisseries", PatisserieSchema);
   },
 });*/
 
-export { PatisserieSchema, Patisserie }
+export { PatisserieSchema, Patisserie, CompteurSchema, Compteur }
