@@ -1,11 +1,11 @@
 html
   include partials/header.pug
   body 
-    form(role='form' method='GET' action='https://www.google.com/')
-      div.form-group
-        label(for='name') Name:
-        input#name.form-control(type='text', placeholder='name' name='name')
+    form(role='form' method='POST' action='/login-form')
       div.form-group
         label(for='email') Email:
         input#email.form-control(type='email', placeholder='name@email.com' name='email')
-      button.btn.btn-primary(type="submit", name="asdf") Submit
+      div.form-group
+        label(for='password') Name:
+        input#name.form-control(type='password', placeholder='password' name='password')
+      button.btn.btn-primary(type="submit") Submit
