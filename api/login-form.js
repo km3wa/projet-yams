@@ -1,11 +1,12 @@
-import { User } from "../Models/Patisserie";
+import { getOnePlayer } from "../utils/db/player";
 
 export default async (req, res) => {
   const { email, password } = req.body;
 
-  User.findOne({email, password}).then(doc => console.log(doc));
-  //console.log(email);
-  //console.log(password);
-
-  res.json(200);
+  const player = await getOnePlayer(email, password);
+  if (player) {
+    req.session.email = player.email;
+    req.session.password = player.password;
+    return res.redirect('/');
+  } else return res.json(400);
 };

@@ -7,6 +7,6 @@ export default [
   { "name": "Eclairs au chocolat", "number": 10, "order": 6 },
   { "name": "Tarte poire chocolat", "number": 10, "order": 7 },
   { "name": "Banana  au chocolat", "number": 10, "order": 8 }
-]
+];
 
 // utilisé juste le temps d'insérer ça dans la bdd

@@ -1,12 +1,14 @@
 import mongoose from 'mongoose';
 import express from "express";
+import session from 'express-session';
 import route from "./routes/routes";
 import dotenv from 'dotenv';
-import { resetGlobalCount, resetPatisserieCount } from './utils/db';
-import { Player } from './Models/Patisserie';
+import { resetPatisserieCount } from './utils/db/patisseries';
+import { resetCompteurCount } from './utils/db/compteur';
+import { resetPlayers } from './utils/db/player';
 
 dotenv.config();
-const { APP_LOCALHOST : hostname, APP_PORT: port, APP_DSN: dsn } = process.env;
+const { APP_LOCALHOST : hostname, APP_PORT: port, APP_DSN: dsn, APP_SECRET: secret } = process.env;
 const app = express();
 
 mongoose.connect(dsn, {
@@ -15,9 +17,15 @@ mongoose.connect(dsn, {
 })
 
 resetPatisserieCount();
-resetGlobalCount();
+resetCompteurCount();
+resetPlayers();
 
-Player.insertMany([{email: "test@test.fr", password: "azdkop", has_played: false}]);
+app.use(session({
+  secret: secret,
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 3600000 }
+}))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());

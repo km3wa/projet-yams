@@ -1,0 +1,11 @@
+html
+  include ../partials/header.pug
+  body 
+    h1= dice
+    h3= message
+
+    if patisseries[0]
+      span patisseries gagnées :
+      ul 
+        each val in patisseries
+          li= val.name
