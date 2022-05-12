@@ -8,3 +8,9 @@ html
     ul 
       each patisserie in patisseries
         li #{patisserie.name} : #{patisserie.number}
+
+    a(href='/play')
+      button(class='primary') Jouer
+
+    a(href='/logout')
+      button(class='primary') Se déconnecter
