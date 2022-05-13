@@ -1,5 +1,6 @@
 html
   include ../partials/header.pug
+  include ../partials/navbar.pug
   body 
     h1= dice
     h3= message
@@ -9,6 +10,3 @@ html
       ul 
         each val in patisseries
           li= val.name
-
-    a(href='/')
-      button(class='primary') Retourner à l'accueil

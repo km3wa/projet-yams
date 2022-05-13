@@ -3,9 +3,9 @@ import express from "express";
 import session from 'express-session';
 import route from "./routes/routes";
 import dotenv from 'dotenv';
-import { resetPatisserieCount } from './utils/db/patisseries';
-import { resetCompteurCount } from './utils/db/compteur';
-import { resetPlayers } from './utils/db/player';
+import { resetPatisserieCount } from './utils/db_utils/patisseries';
+import { resetCompteurCount } from './utils/db_utils/compteur';
+import { resetPlayers } from './utils/db_utils/player';
 
 dotenv.config();
 const { APP_LOCALHOST : hostname, APP_PORT: port, APP_DSN: dsn, APP_SECRET: secret } = process.env;

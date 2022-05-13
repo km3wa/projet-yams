@@ -1,4 +1,26 @@
 @charset "UTF-8";
+.navbar {
+  font-size: 1.2rem;
+  display: flex;
+  padding-left: 10px;
+  gap: 15px;
+  background-color: lightgray;
+  border: 3px;
+  border-style: outset;
+}
+
+.form-group {
+  background-color: antiquewhite;
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: turquoise;
+  color: white;
+  border: white 2px;
+  border-radius: 5%;
+}
+
 /*!
 * KNACSS Reborn: Just keep it simple!
 * @author: Alsacreations
@@ -37,7 +59,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   line-height: 1.5;
@@ -60,7 +82,9 @@ h5,
 .h5-like,
 h6,
 .h6-like {
-  color: #212529;
+  color: steelblue;
+  font-weight: bold;
+  text-shadow: lightgray 3px 3px 3px;
 }
 
 /*

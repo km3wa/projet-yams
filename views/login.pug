@@ -1,5 +1,6 @@
 html
   include partials/header.pug
+  include partials/navbar.pug
   body 
     form(role='form' method='POST' action='/login-form')
       div.form-group
@@ -9,6 +10,3 @@ html
         label(for='password') Name:
         input#name.form-control(type='password', placeholder='password' name='password')
       button.btn.btn-primary(type="submit") Submit
-      
-    a(href='/')
-      button(class='primary') Retourner à l'accueil

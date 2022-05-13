@@ -1,4 +1,4 @@
-import { getOnePlayer } from "../utils/db/player";
+import { getOnePlayer } from "../utils/db_utils/player";
 
 export default async (req, res) => {
   const { email, password } = req.body;

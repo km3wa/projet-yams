@@ -1,3 +1,4 @@
 export default (req, res) => {
-  res.render('login', { title: 'Connexion' });
+  if (req.session.email && req.session.password) return res.redirect("/logout")
+  else return res.render('login', { title: 'Connexion' });
 };

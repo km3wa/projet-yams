@@ -1,8 +1,8 @@
-import { decrementPatisserie, getRandomPatisserie } from "../../utils/db/patisseries";
-import { decrementCompteur, getCompteur } from "../../utils/db/compteur";
+import { decrementPatisserie, getRandomPatisserie } from "../../utils/db_utils/patisseries";
+import { decrementCompteur, getCompteur } from "../../utils/db_utils/compteur";
 
 import { checkResult, diceThrow, winMessage } from "../../utils/utils";
-import { getOnePlayer, setHasPlayed } from "../../utils/db/player";
+import { getOnePlayer, setHasPlayed } from "../../utils/db_utils/player";
 
 export default async (req, res) => {
   const { email, password } = req.session;
