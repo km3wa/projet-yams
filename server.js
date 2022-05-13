@@ -29,7 +29,6 @@ app.use(session({
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
-app.use(express.static('/public'));
 app.set('view engine', 'pug');
 
 app.use('/', route);
